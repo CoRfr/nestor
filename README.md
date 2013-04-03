@@ -17,17 +17,17 @@ Trigger a build:
 
     nestor build <job>
 
-Trigger a parameterised build:
+Trigger a parameterized build:
 
     nestor build <job> ["param1=value1&param2=value2"]
 
 Trigger a build followed by console output:
 
-    nestor build --console  <job>
+    nestor build --console [--follow <variant>] <job>
 
-Display latest build console output:
+Display build console output (with optional number, defaults to last build):
 
-    nestor console <job>
+    nestor console <job> [number]
 
 Stop currently running build:
 
@@ -40,6 +40,10 @@ View status of all jobs:
 View job status reports:
 
     nestor job <job>
+
+View build status:
+
+    nestor status [--console --follow <variant>] <job> <number>
 
 View queued jobs:
 
@@ -67,9 +71,14 @@ Programmatically:
       'http://user:pass@host:port/path'
     );
 
-    // trigger a parameterised build
+    // trigger a parameterized build
     nestor.build('job', 'param1=value1&param2=value2', function (err, result) {
     });
+
+The '--follow' option on some commands allows to follow a particular variant of a parameterized build.
+If job 'MyJob' has variant 'TARGET=host' and 'TARGET=arm', I can launch and follow using:
+    
+    nestor build --console --follow "TARGET=host" MyJob
 
 Check out [lib/jenkins](https://github.com/cliffano/nestor/blob/master/lib/jenkins.js) for other available methods.
 

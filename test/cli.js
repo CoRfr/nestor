@@ -15,6 +15,7 @@ buster.testCase('cli - exec', {
       assert.defined(actions.commands.discover.action);
       assert.defined(actions.commands.executor.action);
       assert.defined(actions.commands.job.action);
+      assert.defined(actions.commands.status.action);
       assert.defined(actions.commands.queue.action);
       assert.defined(actions.commands.ver.action);
       done();

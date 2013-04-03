@@ -6,6 +6,10 @@
         {
           "arg": "-c, --console",
           "desc": "Display console output of the triggered build progress"
+        },
+        {
+          "arg": "-f, --follow [variant]",
+          "desc": "Follow a specific variant of the build"
         }
       ]
     },
@@ -26,6 +30,19 @@
     },
     "job": {
       "desc": "View job status reports\nUsage: nestor job <job>"
+    },
+    "status": {
+      "desc": "View build status\nUsage: nestor status <job> <number>",
+      "options": [
+        {
+          "arg": "-c, --console",
+          "desc": "Display console output of the triggered build progress"
+        },
+        {
+          "arg": "-f, --follow [variant]",
+          "desc": "Follow a specific variant of the build"
+        }
+      ]
     },
     "queue": {
       "desc": "View queued jobs\nUsage: nestor queue"
